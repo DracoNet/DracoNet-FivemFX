@@ -3,7 +3,7 @@
 
 local lang = {
   common = {
-    welcome = "Velkommen. Tryk på K for at bruge menuen",
+    welcome = "Velkommen. Tryk på F9 for at bruge menuen",
     no_player_near = "~r~Ingen spiller nær dig.",
     invalid_value = "~r~Ugyldig Værdi.",
     invalid_name = "~r~Ugyldigt Navn.",

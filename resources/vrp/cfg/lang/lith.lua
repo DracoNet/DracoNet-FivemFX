@@ -3,7 +3,7 @@
 
 local lang = {
   common = {
-    welcome = "Sveikas atvykes į serverį. Meniu rasite paspaude [K] raidę.~n~",
+    welcome = "Sveikas atvykes į serverį. Meniu rasite paspaude [F9] raidę.~n~",
     no_player_near = "~r~Žaidėjo nėra prie jūsų.",
     invalid_value = "~r~Netinkama vertė.",
     invalid_name = "~r~Netinkamas vardas.",

@@ -3,7 +3,7 @@
 
 local lang = {
   common = {
-    welcome = "Bem-vindo ao server. Pressione K para usar o menu.~n~",
+    welcome = "Bem-vindo ao server. Pressione F9 para usar o menu.~n~",
     no_player_near = "~r~Nenhum jogador perto de você.",
     invalid_value = "~r~Valor inválido.",
     invalid_name = "~r~Nome inválido.",
