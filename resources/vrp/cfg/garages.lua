@@ -12,6 +12,11 @@ cfg.rent_factor = 0.1 -- 10% of the original price if a rent
 cfg.sell_factor = 0.75 -- sell for 75% of the original price
 
 cfg.garage_types = {
+  ["Fisher's Boat"] = {
+    _config = {vtype="boat",blipid=427,blipcolor=28,permissions={"fisher.vehicle"}},
+    ["suntrap"] = {"Fisher's boat",0, "Your favorite boat!"}
+  },
+
   ["High End"]  = {  -- 150k price cap
     _config = {vtype="car",blipid=50,blipcolor=4},
     ["ninef"] = {"9F",120000, ""},
@@ -488,6 +493,10 @@ cfg.garage_types = {
   ["bankdriver"] = {
     _config = {vtype="car",blipid=67,blipcolor=4,permissions={"bankdriver.vehicle"}},
     ["stockade"] = {"stockade",0, "stockade"}
+  },
+  ["Medical Driver"] = {
+    _config = {vtype="car",blipid=67,blipcolor=4,permissions={"medical.vehicle"}},
+    ["pony2"] = {"Medical Weed Van",0, "pony2"}
   }
   
   
@@ -543,8 +552,14 @@ cfg.garages = {
   {"Police Helicopters",-475.24264526367,5988.7353515625,31.336685180664}, -- Paleto Bay
   {"EMS Helicopters",449.30340576172,-981.24963378906,43.69165802002}, -- Main PD
   {"EMS Helicopters",1770.2171630859,3239.5561523438,42.13171005249}, -- Sandy Shores
-  {"EMS Helicopters",-475.24264526367,5988.7353515625,31.336685180664} -- Paleto Bay  
+  {"EMS Helicopters",-475.24264526367,5988.7353515625,31.336685180664}, -- Paleto Bay  
+  {"Fisher's Boat",1508.8854980469,3908.5732421875,30.031631469727},
+  {"Medical Driver",-319.82263183594,-942.8408203125,31.080617904663}
+
+
   
+
+
   
   --{"planes",1640, 3236, 40.4},
   --{"planes",2123, 4805, 41.19},

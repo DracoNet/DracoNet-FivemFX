@@ -48,12 +48,12 @@ AddEventHandler('paycheck:salary', function()
 		vRPclient.notify(source,{"Payday: ~g~$4000"})
 	end
 	if vRP.hasPermission(user_id,"delivery.paycheck") then
-		vRP.giveMoney(user_id,2000)
-		vRPclient.notify(source,{"Payday: ~g~$2000"})
+		vRP.giveMoney(user_id,900)
+		vRPclient.notify(source,{"Deliver this Sandwiches, Payday: ~g~$900"})
 	end
 	if vRP.hasPermission(user_id,"citizen.paycheck") then
 		vRP.giveMoney(user_id,500)
-		vRPclient.notify(source,{"Payday: ~g~$500"})
+		vRPclient.notify(source,{"Get a job, Payday: ~g~$500"})
 	end
 	if vRP.hasPermission(user_id,"SWAT.paycheck") then
 		vRP.giveMoney(user_id,2500)
@@ -80,12 +80,12 @@ end)
 RegisterServerEvent('paycheck:bonus')
 AddEventHandler('paycheck:bonus', function()
   	local user_id = vRP.getUserId(source)
---	if vRP.hasPermission(user_id,"user.paycheck") then
---		vRP.giveMoney(user_id,100)
---		vRPclient.notify(source,{"Gift for play: ~g~$100"})
---	end
 	if vRP.hasPermission(user_id,"user.paycheck") then
-		vRP.getMoney(user_id,25)
+		vRP.giveMoney(user_id,100)
+		vRPclient.notify(source,{"Gift for play: ~g~$100"})
+	end
+	if vRP.hasPermission(user_id,"user.paycheck") then
+		vRP.tryPayment(user_id,25)
 		vRPclient.notify(source,{"Phone bill: ~r~$-25"})
 	end
 end)

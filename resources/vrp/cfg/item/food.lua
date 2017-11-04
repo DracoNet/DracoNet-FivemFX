@@ -64,15 +64,15 @@ end
 
 -- DRINKS --
 
-items["water"] = {"Water bottle","", gen("drink",0,-25),0.5}
+items["water"] = {"Water","", gen("drink",0,-25),0.5}
 items["milk"] = {"Milk","", gen("drink",0,-5),0.5}
 items["coffee"] = {"Coffee","", gen("drink",0,-10),0.2}
 items["tea"] = {"Tea","", gen("drink",0,-15),0.2}
-items["icetea"] = {"ice-Tea","", gen("drink",0,-20), 0.5}
+items["icetea"] = {"Ice-Tea","", gen("drink",0,-20), 0.5}
 items["orangejuice"] = {"Orange Juice","", gen("drink",0,-25),0.5}
-items["gocagola"] = {"Goca Gola","", gen("drink",0,-35),0.3}
-items["redgull"] = {"RedGull","", gen("drink",0,-40),0.3}
-items["lemonlimonad"] = {"Lemon limonad","", gen("drink",0,-45),0.3}
+items["gocagola"] = {"Coca Cola","", gen("drink",0,-35),0.3}
+items["redgull"] = {"Red Bull","", gen("drink",0,-40),0.3}
+items["lemonlimonad"] = {"Lemonade","", gen("drink",0,-45),0.3}
 items["vodka"] = {"Vodka","", gen("drink",15,-65),0.5}
 
 --FOOD
@@ -84,5 +84,7 @@ items["tacos"] = {"Tacos","", gen("eat",-20,0),0.2}
 items["sandwich"] = {"Sandwich","A tasty snack.", gen("eat",-25,0),0.5}
 items["kebab"] = {"Kebab","", gen("eat",-45,0),0.85}
 items["pdonut"] = {"Premium Donut","", gen("eat",-25,0),0.5}
+items["catfish"] = {"Catfish","", gen("eat",10,15),0.3}
+items["bass"] = {"Bass","", gen("eat",10,15),0.3}
 
 return items

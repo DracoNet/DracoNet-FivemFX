@@ -185,7 +185,7 @@ Citizen.CreateThread(function()
 		end
 
 		if robbing then
-		    SetPlayerWantedLevel(PlayerId(), 4, 0)
+		    SetPlayerWantedLevel(PlayerId(), 0, 0)
             SetPlayerWantedLevelNow(PlayerId(), 0)
 			
 			bank_drawTxt(0.66, 1.44, 1.0,1.0,0.4, "Robbing bank: ~r~" .. secondsRemaining .. "~w~ seconds remaining", 255, 255, 255, 255)

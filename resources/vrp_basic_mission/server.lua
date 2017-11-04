@@ -217,6 +217,183 @@ function task_mission()
       end
     end
   end
+
+      -- Fisherman
+  for k,v in pairs(cfg.fisherman) do -- each repair perm def
+    -- add missions to users
+    local users = vRP.getUsersByPermission({k})
+    for l,w in pairs(users) do
+      local user_id = w
+      local player = vRP.getUserSource({user_id})
+      if not vRP.hasMission({player}) then
+        -- build mission
+        local mdata = {}
+        mdata.name = lang.fisherman.title()
+
+        -- generate items
+        local todo = 0
+        local fisherman_items = {}
+        for idname,data in pairs(v.items) do
+          local amount = math.random(data[1],data[2]+1)
+          if amount > 0 then
+            fisherman_items[idname] = amount
+            todo = todo+1
+          end
+        end
+
+        local step = {
+          text = "",
+          onenter = function(player, area)
+            for idname,amount in pairs(fisherman_items) do
+              if amount > 0 then -- check if not done
+                if vRP.tryGetInventoryItem({user_id,idname,amount,true}) then
+                  local reward = v.items[idname][3]*amount
+                  vRP.giveMoney({user_id,reward})
+                  vRPclient.notify(player,{glang.money.received({reward})})
+                  todo = todo-1
+                  fisherman_items[idname] = 0
+                  if todo == 0 then -- all received, finish mission
+                    vRP.nextMissionStep({player})
+                  end
+                end
+              end
+            end
+          end,
+          position = v.positions[math.random(1,#v.positions+1)]
+        }
+
+        -- mission display
+        for idname,amount in pairs(fisherman_items) do
+          local name = vRP.getItemName({idname})
+          step.text = step.text..lang.fisherman.item({name,amount}).."<br />"
+        end
+
+        mdata.steps = {step}
+
+        if todo > 0 then
+          vRP.startMission({player,mdata})
+        end
+      end
+    end
+  end
+
+      -- Medical Delivery
+  for k,v in pairs(cfg.medical_driver) do -- each repair perm def
+    -- add missions to users
+    local users = vRP.getUsersByPermission({k})
+    for l,w in pairs(users) do
+      local user_id = w
+      local player = vRP.getUserSource({user_id})
+      if not vRP.hasMission({player}) then
+        -- build mission
+        local mdata = {}
+        mdata.name = lang.medical.title()
+
+        -- generate items
+        local todo = 0
+        local medical_driver_items = {}
+        for idname,data in pairs(v.items) do
+          local amount = math.random(data[1],data[2]+1)
+          if amount > 0 then
+            medical_driver_items[idname] = amount
+            todo = todo+1
+          end
+        end
+
+        local step = {
+          text = "",
+          onenter = function(player, area)
+            for idname,amount in pairs(medical_driver_items) do
+              if amount > 0 then -- check if not done
+                if vRP.tryGetInventoryItem({user_id,idname,amount,true}) then
+                  local reward = v.items[idname][3]*amount
+                  vRP.giveMoney({user_id,reward})
+                  vRPclient.notify(player,{glang.money.received({reward})})
+                  todo = todo-1
+                  drugseller_items[idname] = 0
+                  if todo == 0 then -- all received, finish mission
+                    vRP.nextMissionStep({player})
+                  end
+                end
+              end
+            end
+          end,
+          position = v.positions[math.random(1,#v.positions+1)]
+        }
+
+        -- mission display
+        for idname,amount in pairs(medical_driver_items) do
+          local name = vRP.getItemName({idname})
+          step.text = step.text..lang.medical.item({name,amount}).."<br />"
+        end
+
+        mdata.steps = {step}
+
+        if todo > 0 then
+          vRP.startMission({player,mdata})
+        end
+      end
+    end
+  end
+  
+       -- Weapons Smuggler
+  for k,v in pairs(cfg.weapons_smuggler) do -- each repair perm def
+    -- add missions to users
+    local users = vRP.getUsersByPermission({k})
+    for l,w in pairs(users) do
+      local user_id = w
+      local player = vRP.getUserSource({user_id})
+      if not vRP.hasMission({player}) then
+        -- build mission
+        local mdata = {}
+        mdata.name = lang.weapons_smuggler.title()
+
+        -- generate items
+        local todo = 0
+        local weapons_smuggler_items = {}
+        for idname,data in pairs(v.items) do
+          local amount = math.random(data[1],data[2]+1)
+          if amount > 0 then
+            weapons_smuggler_items[idname] = amount
+            todo = todo+1
+          end
+        end
+
+        local step = {
+          text = "",
+          onenter = function(player, area)
+            for idname,amount in pairs(weapons_smuggler_items) do
+              if amount > 0 then -- check if not done
+                if vRP.tryGetInventoryItem({user_id,idname,amount,true}) then
+                  local reward = v.items[idname][3]*amount
+                  vRP.giveMoney({user_id,reward})
+                  vRPclient.notify(player,{glang.money.received({reward})})
+                  todo = todo-1
+                  drugseller_items[idname] = 0
+                  if todo == 0 then -- all received, finish mission
+                    vRP.nextMissionStep({player})
+                  end
+                end
+              end
+            end
+          end,
+          position = v.positions[math.random(1,#v.positions+1)]
+        }
+
+        -- mission display
+        for idname,amount in pairs(weapons_smuggler_items) do
+          local name = vRP.getItemName({idname})
+          step.text = step.text..lang.weapons_smuggler.item({name,amount}).."<br />"
+        end
+
+        mdata.steps = {step}
+
+        if todo > 0 then
+          vRP.startMission({player,mdata})
+        end
+      end
+    end
+  end
   
       -- hacker
   for k,v in pairs(cfg.hacker) do -- each repair perm def

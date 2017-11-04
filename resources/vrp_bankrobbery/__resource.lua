@@ -1,5 +1,5 @@
 
-description "vRP Bank Robberies by Lee Fall"
+description "vRP Bank Robberies by Lee Fall - Edited by Dunko"
 --ui_page "ui/index.html"
 
 dependency "vrp"

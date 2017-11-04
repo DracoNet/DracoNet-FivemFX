@@ -41,10 +41,10 @@ cfg.handcuff_disable_menu = true
 cfg.coma_threshold = 120
 
 -- maximum duration of the coma in minutes
-cfg.coma_duration = 6
+cfg.coma_duration = 5
 
 -- if true, a player in coma will not be able to open the main menu
-cfg.coma_disable_menu = true
+cfg.coma_disable_menu = false
 
 -- see https://wiki.fivem.net/wiki/Screen_Effects
 cfg.coma_effect = "DeathFailMPIn"

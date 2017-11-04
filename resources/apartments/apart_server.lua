@@ -7,7 +7,7 @@
 
 local mode = "Async"
 
-local lang = 'fr'
+local lang = 'en'
 local txt = {
   	['fr'] = {
         ['welcome'] = 'Bienvenue dans votre appartement!',

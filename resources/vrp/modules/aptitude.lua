@@ -191,31 +191,13 @@ local function ch_aptitude(player,choice)
             local flvl = vRP.expToLevel(exp)
             local lvl = math.floor(flvl)
             local percent = math.floor((flvl-lvl)*100)
-            content = content.."<div class=\"dprogressbar\" data-value=\""..(percent/100).."\" data-color=\"rgba(0,125,255,0.7)\" data-bgcolor=\"rgba(0,125,255,0.3)\">"..lang.aptitude.display.aptitude({def[1], exp, lvl, percent}).."</div>"
+            content = content..lang.aptitude.display.aptitude({def[1], exp, lvl, percent}).."<br />"
           end
         end
       end
 
       player_apts[player] = true
-
-      local css = [[
-.div_user_aptitudes{
-  margin: auto;
-  padding: 8px;
-  width: 500px;
-  margin-top: 80px;
-  background: black;
-  color: white;
-  font-weight: bold;
-}
-
-.div_user_aptitudes .dprogressbar{
-  width: 100%;
-  height: 20px;
-}
-      ]]
-
-      vRPclient.setDiv(player,{"user_aptitudes",css, content})
+      vRPclient.setDiv(player,{"user_aptitudes",".div_user_aptitudes{ margin: auto; padding: 8px; width: 500px; margin-top: 80px; background: black; color: white; font-weight: bold; ", content})
     end
   end
 end

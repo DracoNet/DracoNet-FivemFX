@@ -97,5 +97,6 @@ items["pills"] = {"Pills","A simple medication.",function(args) return pills_cho
 items["weed"] = {"Weed","A some weed.",function(args) return smoke_choices end,0.10}
 items["cocaine"] = {"Cocaine","Some cocaine.",function(args) return smell_choices end,0.5}
 items["lsd"] = {"Lsd","Some LSD.",function(args) return lsd_choices end,0.1}
+items["Medical Weed"] = {"Medical Weed","Used by Doctors."}
 
 return items

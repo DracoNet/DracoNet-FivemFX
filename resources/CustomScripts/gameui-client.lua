@@ -55,11 +55,11 @@ Citizen.CreateThread(function()
 				end
 			end
 
---		if(IsPedInAnyVehicle(GetPlayerPed(-1), false))then
---			local speed = GetEntitySpeed(GetVehiclePedIsIn(GetPlayerPed(-1), false)) * 2.236936
---
---			drawTxt(1.407, 1.30, 1.0,1.0,0.7, "~y~" .. math.ceil(speed) .. "", 255, 255, 255, 255)
---			drawTxt(1.4, 1.337, 1.0,1.0,0.7, "~b~ mph", 255, 255, 255, 255)
-		end
+		--if(IsPedInAnyVehicle(GetPlayerPed(-1), false))then
+		--	local speed = GetEntitySpeed(GetVehiclePedIsIn(GetPlayerPed(-1), false)) * 2.236936
+
+		--	drawTxt(1.407, 1.30, 1.0,1.0,0.7, "~y~" .. math.ceil(speed) .. "", 255, 255, 255, 255)
+		--	drawTxt(1.4, 1.337, 1.0,1.0,0.7, "~b~ mph", 255, 255, 255, 255)
+		--end
 	end
 end)

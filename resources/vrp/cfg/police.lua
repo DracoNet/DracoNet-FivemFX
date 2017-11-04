@@ -54,7 +54,9 @@ cfg.seizable_items = {
   "seeds",
   "harness",
   "credit",
-  "weed"
+  "weed",
+  "M4A1",
+  "AK47"
 }
 
 -- jails {x,y,z,radius}
@@ -67,21 +69,16 @@ cfg.jails = {
 -- fines
 -- map of name -> money
 cfg.fines = {
-  ["Fornærmelse"] = 250,
-  ["Vold"] = 1250,
-  ["Fartbøde"] = 500,
-  ["Rødt Lys"] = 500,
-  ["Stjæler"] = 1000,
-  ["Credit Cards - Per Kort"] = 1000,
-  ["Stoffer - pr. stk"] = 2000,
-  ["Våbenbesiddelse pr. stk"] = 5000,
-  ["Kørsel uden kørekort"] = 1500,
+  ["Insult"] = 100,
+  ["Speeding"] = 250,
+  ["Red Light"] = 250,
+  ["Stealing"] = 1000,
+  ["Credit Cards - Per Card"] = 1000,
+  ["Drugs - Per Drug"] = 2000,
   ["Dirty Money - Per $1000"] = 1500,
-  ["Organiseret kriminalitet (10k)"] = 10000,
-  ["Organiseret kriminalitet (50k)"] = 50000,
-  ["Organiseret kriminalitet (100k)"] = 100000,
-  ["Organiseret kriminalitet (500k)"] = 500000,
-  ["Organiseret kriminalitet (1M)"] = 1000000
+  ["Organized crime (low)"] = 10000,
+  ["Organized crime (medium)"] = 25000,
+  ["Organized crime (high)"] = 50000
 }
 
 return cfg

@@ -6,10 +6,10 @@
 
 
 
-local Director = {"steam:","ip:",}
-local Admin = {"steam:","ip:",}
-local Admin = {"steam:","ip:",}
-local Admin = {"steam:","ip:",}
+local Director = {"steam:110000100cf4db2","ip:",}
+local Admin = {"steam:110000104520779","ip:",}
+local Admin = {"steam:110000115296d90","ip:",}
+local Admin = {"steam:110000103b33f66 ","ip:",}
 local HighwayPatrol = {"steam:","ip:",}
 local Fire = {"steam:","ip:",}
 local EMT = {"steam:","ip:",}

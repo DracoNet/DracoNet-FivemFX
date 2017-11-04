@@ -1,6 +1,6 @@
 
 local noclip = false
-local noclip_speed = 1.0
+local noclip_speed = 5.0
 
 function tvRP.toggleNoclip()
   noclip = not noclip

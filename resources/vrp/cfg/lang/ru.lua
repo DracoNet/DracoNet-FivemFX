@@ -21,6 +21,7 @@ local lang = {
   },
   money = {
     display = "{1} <span class=\"symbol\">$</span>",
+    bdisplay = "{1} <span class=\"symbol\">$</span>",
     given = "Передано ~r~{1}$.",
     received = "Получено ~g~{1}$.",
     not_enough = "~r~Недостаточно денег.",
@@ -465,7 +466,7 @@ local lang = {
     level_up = "Способность ~b~{1}/{2} ~g~уровень вырос ({3}).",
     display = {
       group = "{1}: ",
-      aptitude = "{1} уровень {3} опыт {2}"
+      aptitude = "--- {1} | уровень {3} | опыт {2} | прогресс {4}%"
     }
   }
 }

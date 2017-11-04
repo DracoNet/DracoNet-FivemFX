@@ -1,11 +1,7 @@
 
 local vehicles = {}
 
-AddEventHandler('vrp_garages:setVehicle', function(vtype, vehicle)
-	vehicles[vtype] = vehicle
-end)
-
-function tvRP.spawnGarageVehicle(vtype,name,pos) -- vtype is the vehicle type (one vehicle per type allowed at the same time)
+function tvRP.spawnGarageVehicle(vtype,name) -- vtype is the vehicle type (one vehicle per type allowed at the same time)
 
   local vehicle = vehicles[vtype]
   if vehicle and not IsVehicleDriveable(vehicle[3]) then -- precheck if vehicle is undriveable
@@ -32,10 +28,6 @@ function tvRP.spawnGarageVehicle(vtype,name,pos) -- vtype is the vehicle type (o
     -- spawn car
     if HasModelLoaded(mhash) then
       local x,y,z = tvRP.getPosition()
-      if pos then
-        x,y,z = table.unpack(pos)
-      end
-
       local nveh = CreateVehicle(mhash, x,y,z+0.5, 0.0, true, false)
       SetVehicleOnGroundProperly(nveh)
       SetEntityInvincible(nveh,false)
@@ -77,22 +69,6 @@ function tvRP.despawnGarageVehicle(vtype,max_range)
     end
   end
 end
-
--- check vehicles validity
---[[
-Citizen.CreateThread(function()
-  Citizen.Wait(30000)
-
-  for k,v in pairs(vehicles) do
-    if IsEntityAVehicle(v[3]) then -- valid, save position
-      v.pos = {table.unpack(GetEntityCoords(vehicle[3],true))}
-    elseif v.pos then -- not valid, respawn if with a valid position
-      print("[vRP] invalid vehicle "..v[1]..", respawning...")
-      tvRP.spawnGarageVehicle(v[1], v[2], v.pos)
-    end
-  end
-end)
---]]
 
 -- (experimental) this function return the nearest vehicle
 -- (don't work with all vehicles, but aim to)
@@ -265,4 +241,5 @@ function tvRP.vc_toggleLock(vtype)
     end
   end
 end
+
 

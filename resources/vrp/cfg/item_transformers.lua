@@ -6,6 +6,84 @@ local cfg = {}
 
 cfg.item_transformers = {
   -- example of harvest item transformer
+    {
+    name="Fishing", -- menu name
+    permissions = {"mission.delivery.fish"}, -- you can add permissions
+    r=0,g=125,b=255, -- color
+    max_units=100000,
+    units_per_minute=2,
+    x=743.19586181641,y=3895.3967285156,z=30.5, 
+    radius=3, height=1.5, -- area
+    recipes = {
+      ["Catch some Catfish"] = { -- action name
+        description="Trying to catch some Catfish", -- action description
+        in_money=0, -- money taken per unit
+        out_money=0, -- money earned per unit
+        reagents={}, -- items taken per unit
+        products={ -- items given per unit
+          ["catfish"] = 1
+        }
+      },
+      ["Catch some Bass"] = { -- action name
+        description="Trying to catch some Bass", -- action description
+        in_money=0, -- money taken per unit
+        out_money=0, -- money earned per unit
+        reagents={}, -- items taken per unit
+        products={ -- items given per unit
+          ["bass"] = 1
+        }
+      }
+    }
+  },
+      {
+    name="Weapons Smuggler", -- menu name
+    permissions = {"mission.weapons.smuggler"}, -- you can add permissions
+    r=0,g=125,b=255, -- color
+    max_units=100000,
+    units_per_minute=2,
+    x=-343.28500366211,y=6098.6586914063,z=31.327739715576,
+    radius=3, height=1.5, -- area
+    recipes = {
+      ["Gather AK's"] = { -- action name
+        description="Grabbing AK's", -- action description
+        in_money=0, -- money taken per unit
+        out_money=0, -- money earned per unit
+        reagents={}, -- items taken per unit
+        products={ -- items given per unit
+          ["AK47"] = 1
+        }
+      },
+      ["Gather M4A1"] = { -- action name
+        description="Grabbing M4's", -- action description
+        in_money=0, -- money taken per unit
+        out_money=0, -- money earned per unit
+        reagents={}, -- items taken per unit
+        products={ -- items given per unit
+          ["M4A1"] = 1
+        }
+      }
+    }
+  },
+      {
+    name="Medical Transport", -- menu name
+    permissions = {"mission.delivery.medical"}, -- you can add permissions
+    r=0,g=125,b=255, -- color
+    max_units=100000,
+    units_per_minute=2,
+    x=2213.0520019531,y=5577.5981445313,z=53.795757293701,
+    radius=3, height=1.5, -- area
+    recipes = {
+      ["Gather Medical Weed"] = { -- action name
+        description="Gathering Medical Weed", -- action description
+        in_money=0, -- money taken per unit
+        out_money=0, -- money earned per unit
+        reagents={}, -- items taken per unit
+        products={ -- items given per unit
+          ["Medical Weed"] = 1
+        }
+      }
+	 }
+  },
   {
     name="Water bottles/tacos tree", -- menu name
     -- permissions = {"harvest.water_bottle_tacos"}, -- you can add permissions
@@ -78,7 +156,7 @@ cfg.item_transformers = {
     name="Body training", -- menu name
     r=255,g=125,b=0, -- color
     max_units=1000,
-    units_per_minute=1000,
+    units_per_minute=1,
     x=-1202.96252441406,y=-1566.14086914063,z=4.61040639877319,
     radius=7.5, height=1.5, -- area
     recipes = {
@@ -185,7 +263,7 @@ cfg.item_transformers = {
     r=0,g=255,b=0, -- color
     max_units=200,
     units_per_minute=10,
-    x=-296.07788085938,y=6201.1684570313,z=31.487987518311, -- pos (needed for public use lab tools)
+    x=-77.722381591797,y=6223.626953125,z=31.089864730835, -- pos (needed for public use lab tools)
     radius=1.1, height=1.5, -- area
     recipes = {
       ["cocaine"] = { -- action name
@@ -340,8 +418,9 @@ cfg.informer = {
     ["weed field"] = 20000
   },
   positions = {
-    {1821.12390136719,3685.9736328125,34.2769317626953},
-    {1804.2958984375,3684.12280273438,34.217945098877}
+    {2208.0104980469,5577.6987304688,53.739212036133},
+    {-631.00543212891,-229.42568969727,38.057052612305},
+	{1992.5993652344,3044.1806640625,47.215068817139}
   },
   interval = 60, -- interval in minutes for the reseller respawn
   duration = 10, -- duration in minutes of the spawned reseller

@@ -14,7 +14,7 @@ cfg.lang = "en"
 --- steps: number of things to fix
 cfg.repair = {
   ["mission.repair.satellite_dishes"] = {
-    chance = 5,
+    chance = 7,
     title = "satellite dishes",
     steps = 3,
     positions = {
@@ -96,7 +96,7 @@ cfg.bankdriver = {
     reward = 500
   },
   ["mission.bankdriver.banks"] = {
-    chance = 5,
+    chance = 7,
     title = "Bank Driver",
     steps = 1,
     positions = {
@@ -110,7 +110,7 @@ cfg.bankdriver = {
     reward = 500
   },
   ["mission.bankdriver.atms"] = {
-    chance = 5,
+    chance = 7,
     title = "Bank Driver",
     steps = 3,
     positions = {
@@ -222,6 +222,7 @@ local common_delivery_positions = {
 -- only one delivery permission can be used per player (no permission selection, only one will work)
 cfg.delivery = {
   ["mission.delivery.food"] = {
+    chance = 10,
     positions = common_delivery_positions,
     items = {
       ["tacos"] = {0,4,130},
@@ -265,6 +266,55 @@ cfg.drugseller = {
       ["weed"] = {1,10,500},
 	  ["cocaine"] = {0,7,600},
 	  ["lsd"] = {0,5,700}
+    }
+  }
+}
+
+local common_fisher_positions = {
+  {1397.0802001953,3606.7141113281,34.980922698975},
+  {1966.0919189453,3746.009765625,32.343746185303},
+  {2678.9653320313,3288.4008789063,55.241153717041},
+  {1168.3609619141,2708.5288085938,38.157703399658}
+}
+
+cfg.fisherman = {
+  ["mission.delivery.fish"] = {
+	title = "Fishing",
+    positions = common_fisher_positions,
+    items = {
+      ["bass"] = {1,8,200},
+	  ["catfish"] = {1,8,200}
+    }
+  }
+}
+
+local common_smuggler_positions = {
+  {-569.02294921875,5253.2524414063,70.487228393555},
+  {-1144.0905761719,4938.1181640625,222.26870727539},
+  {-2612.7600097656,2949.5141601563,9.6540851593018} 
+}
+
+cfg.weapons_smuggler = {
+  ["mission.weapons.smuggler"] = {
+	title = "Weapons Smuggler",
+    positions = common_smuggler_positions,
+    items = {
+      ["AK47"] = {1,5,350},
+	  ["M4A1"] = {1,5,350}
+    }
+  }
+}
+
+local common_medical_positions = {
+  {326.83486938477,-1473.7293701172,29.795280456543}
+}
+
+cfg.medical_driver = {
+  ["mission.delivery.medical"] = {
+	title = "Medical Delivery",
+    positions = common_medical_positions,
+    items = {
+      ["Medical Weed"] = {1,10,350}
     }
   }
 }
