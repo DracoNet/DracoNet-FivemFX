@@ -2,7 +2,7 @@
 
 DracoNet FivemFX RP Server
 
-Current: V6.1
+Current: V6.2
 
 # Installation
 
