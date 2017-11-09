@@ -11,6 +11,7 @@ handsup = false
 crouched = false
 pointing = false
 engine = true
+called = 0
 
 -- YOU ARE ON A CLIENT SCRIPT ( Just reminding you ;) )
 -- Keys IDs can be found at https://wiki.fivem.net/wiki/Controls
@@ -84,6 +85,34 @@ cfg.hotkeys = {
           SetPedMovementClipset(GetPlayerPed(-1), "move_ped_crouched", 0.25)
         end 
 	  end -- Comment to allow use in vehicle
+	end,
+	released = function()
+	  -- Do nothing on release because it's toggle.
+	end,
+  },
+  [46] = {
+    -- E call/skip emergency
+    group = 0, 
+	pressed = function() 
+	  if vRP.isInComa({}) then
+	    if called == 0 then
+	      HKserver.canSkipComa({},function(skipper)
+		    if skipper then
+		      HKserver.docsOnline({},function(docs)
+		        if docs == 0 then
+				  vRP.killComa({})
+			    else
+				  called = 30
+				  local x,y,z = table.unpack(GetEntityCoords(GetPlayerPed(-1),true))
+				  HKserver.helpComa({x,y,z})
+			    end
+			  end)
+            end
+		  end)
+		else
+		  vRP.notify({"~r~You already called the ambulance."})
+		end
+	  end
 	end,
 	released = function()
 	  -- Do nothing on release because it's toggle.

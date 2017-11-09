@@ -13,7 +13,6 @@ client_scripts{
   "tptowaypoint/client.lua",
   "drag/client.lua",
   "spikes/client.lua"
-  --"freeze/client.lua"
 }
 
 server_scripts{ 

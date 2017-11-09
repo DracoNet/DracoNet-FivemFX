@@ -8,12 +8,22 @@ vRP = Proxy.getInterface("vRP")
 
 local frozen = false
 local unfrozen = false
-function vRPbm.loadFreeze(freeze)
-	if freeze then
+function vRPbm.loadFreeze(notify,god,ghost)
+	if not frozen then
+	  if notify then
+	    vRP.notify({"~r~You've been frozen."})
+	  end
 	  frozen = true
+	  invincible = god
+	  invisible = ghost
 	  unfrozen = false
 	else
+	  if notify then
+	    vRP.notify({"~g~You've been unfrozen."})
+	  end
 	  unfrozen = true
+	  invincible = false
+	  invisible = false
 	end
 end
 
@@ -194,9 +204,15 @@ Citizen.CreateThread(function()
 				SetEntityVisible(GetPlayerPed(-1),true)
 				FreezeEntityPosition(GetPlayerPed(-1),false)
 				frozen = false
+				invisible = false
+				invincible = false
 			else
-				SetEntityInvincible(GetPlayerPed(-1),true)
-				SetEntityVisible(GetPlayerPed(-1),false)
+				if invincible then
+					SetEntityInvincible(GetPlayerPed(-1),true)
+				end
+				if invisible then
+					SetEntityVisible(GetPlayerPed(-1),false)
+				end
 				FreezeEntityPosition(GetPlayerPed(-1),true)
 			end
 		end

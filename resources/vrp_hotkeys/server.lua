@@ -13,6 +13,20 @@ function vRPhk.test(msg)
   return 42
 end
 
+function vRPhk.docsOnline()
+  local docs = vRP.getUsersByPermission({"emergency.revive"})
+  return #docs
+end
+
+function vRPhk.canSkipComa()
+  local user_id = vRP.getUserId({source})
+  return vRP.hasPermission({user_id,"player.skip_coma"})
+end
+
+function vRPhk.helpComa(x,y,z)
+  vRP.sendServiceAlert({source,"emergency",x,y,z,"Help! I've fallen and can't get up!"}) -- people will change this message anyway haha
+end
+
 local vehStorage = {}
 function vRPhk.canUserLockVehicle(plate, vehicleId, isPlayerInside)
 	local player = source
