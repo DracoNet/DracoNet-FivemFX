@@ -61,7 +61,10 @@ cfg.groups = {
     "player.list",
 	"player.group.add",
     "player.group.remove",
-    },
+  },
+  ["god"] = {
+    "admin.god" -- reset survivals/health periodically
+  },
   ["mod"] = {
     _config = {onspawn = function(player) vRPclient.notify(player,{"You are mod."}) end}, 
 	"admin.tickets",
@@ -92,6 +95,7 @@ cfg.groups = {
     "police.seizable",	-- can be seized
 	"toggle.service",
 	"carjacker.lockpick",
+	"player.userlist",
 	"user.paycheck"
   },
   ["Fisher"] = {
