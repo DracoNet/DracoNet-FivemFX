@@ -23,7 +23,7 @@ cfg.ping_timeout = 5 -- number of minutes after a client should be kicked if not
 -- if enabled, steam auth should be forced in the FiveM server config
 cfg.ignore_ip_identifier = true
 
-cfg.lang = "en"
+cfg.lang = "en" -- en / fr / it / ger / pt / ru / lith / dan / ar / pl / es / swe (English/Français/Italiano/Deutsche/Português/Pусский/Lietuvių/Dansk/العربية/Polskie/Español/Svenska)
 cfg.debug = false
 
 

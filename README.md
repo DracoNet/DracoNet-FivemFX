@@ -14,9 +14,11 @@ Current: V6.2
 
 4) Go to server.cfg and enter your database details.
 
-5) Open Start_Server.cmd with Notepad++ and put in the directory you have your server in.
+5) Whilst in server.cfg go to line 141 and enter your server key, you can get one from here.
 
-6) start server let it make the database then load SQL.sql in database
+6) Open Start_Server.cmd with Notepad++ and put in the directory you have your server in.
+
+7) start server let it make the database then load SQL.sql in database
 
 
 Thanks to Dunko for Fremwork
