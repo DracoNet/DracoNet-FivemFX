@@ -548,8 +548,8 @@ local ch_fine = {function(player,choice)
 			    if reason ~= nil and reason ~= "" then 
 	              local target = vRP.getUserSource({tonumber(target_id)})
 				  if target ~= nil then
-		            if tonumber(fine) > 1000 then
-  			          fine = 1000
+		            if tonumber(fine) > 10000 then
+  			          fine = 10000
 		            end
 		            if tonumber(fine) < 100 then
 		              fine = 100
