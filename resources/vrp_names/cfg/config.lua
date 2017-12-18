@@ -10,10 +10,13 @@ config = {
     -- Show user id
     id = true,
     -- Show names only for admins
-    admin_only = false,
+    admin_only = true,
     -- Language vars
     lang = {
         default = "en",
+        ['da'] = {
+            speaking = "Snakker"
+        },
         ['en'] = {
             speaking = "Speaking"
         },

@@ -8,8 +8,8 @@
 
 local Director = {"steam:110000100cf4db2","ip:",}
 local Admin = {"steam:110000104520779","ip:",}
-local Admin = {"steam:110000115296d90","ip:",}
-local Admin = {"steam:110000103b33f66 ","ip:",}
+local Admin2 = {"steam:110000115296d90","ip:",}
+local Admin3 = {"steam:110000103b33f66 ","ip:",}
 local HighwayPatrol = {"steam:","ip:",}
 local Fire = {"steam:","ip:",}
 local EMT = {"steam:","ip:",}
@@ -32,9 +32,9 @@ AddEventHandler('chatMessage', function(Source, Name, Msg)
             TriggerClientEvent('chatMessage', -1, "Mayor | " .. Name, { 255, 0, 0 }, Msg)           
         elseif has_value(Admin, player) then
             TriggerClientEvent('chatMessage', -1, "Admin | " .. Name, { 255, 0, 0 }, Msg)
-		elseif has_value(Admin, player) then
+		elseif has_value(Admin2, player) then
             TriggerClientEvent('chatMessage', -1, "Admin | " .. Name, { 255, 0, 0 }, Msg)
-		elseif has_value(Admin, player) then
+		elseif has_value(Admin3, player) then
             TriggerClientEvent('chatMessage', -1, "Admin | " .. Name, { 255, 0, 0 }, Msg)
         elseif has_value(HighwayPatrol, player) then
             TriggerClientEvent('chatMessage', -1, "Highway Patrol | " .. Name, { 0, 0, 255 }, Msg)

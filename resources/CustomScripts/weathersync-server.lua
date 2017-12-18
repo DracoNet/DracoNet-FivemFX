@@ -5,6 +5,7 @@ local adminOnlyPlugin = true     -- Should chat commands be limited to the `admi
 -- Add STEAM ids here in below format to allow these people to toggle and change the weather
 local admins = {
 	"steam:110000100cf4db2",
+	"steam:"
 }
 
 

@@ -1,9 +1,28 @@
 petrolCanPrice = 1
 
 lang = "en"
--- lang = "fr"
+-- lang = "dan,en,fr"
 
 settings = {}
+settings["dan"] = {
+	openMenu = "Tryk ~g~E~w~ for at åbne menuen.",
+	electricError = "~r~Du har en el-bil.",
+	fuelError = "~r~You're not in the good place.",
+	buyFuel = "Køb brændstof",
+	liters = "liter",
+	percent = "procent",
+	confirm = "Godkend",
+	fuelStation = "Tank Station",
+	boatFuelStation = "Tank station | Båd",
+	avionFuelStation = "Tank station | Fly ",
+	heliFuelStation = "Tank station | Helicopter",
+	getJerryCan = "Tryk ~g~E~w~ for at købe brændstof ("..petrolCanPrice.."$)",
+	refeel = "Tryk ~g~E~w~ for at fylde køretøj.",
+	YouHaveBought = "Du har købt ",
+	fuel = " liter brændstof",
+	price = "pris"
+}
+
 settings["en"] = {
 	openMenu = "Press ~g~E~w~ to open the menu.",
 	electricError = "~r~You have an electric vehicle.",
@@ -57,5 +76,5 @@ text_y = 0.975
 
 electricityPrice = 1 -- NOT RANOMED !!
 
-randomPrice = false --Random the price of each stations
+randomPrice = true --Random the price of each stations
 price = 2 --If random price is on False, set the price here for 1 liter

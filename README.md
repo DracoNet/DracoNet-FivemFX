@@ -2,7 +2,7 @@
 
 DracoNet FivemFX RP Server
 
-Current: V6.2
+Current: V6.2.1
 
 # Installation
 
@@ -14,11 +14,13 @@ Current: V6.2
 
 4) Go to server.cfg and enter your database details.
 
-5) Whilst in server.cfg go to line 141 and enter your server key, you can get one from here.
+5) Whilst in server.cfg go to line 130 and set your server name, make sure it’s inside the quotations.
 
-6) Open Start_Server.cmd with Notepad++ and put in the directory you have your server in.
+6) Whilst in server.cfg go to line 160 and enter your server key, you can get one from here.
 
-7) start server let it make the database then load SQL.sql in database
+7) Open Start_Server.cmd with Notepad++ and put in the directory you have your server in.
+
+8) start server let it make the database then load SQL.sql in database
 
 
 Thanks to Dunko for Fremwork

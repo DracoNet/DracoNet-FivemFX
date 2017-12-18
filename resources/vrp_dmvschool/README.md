@@ -1,0 +1,1 @@
+To change language replace lines in __resource.lua
