@@ -676,7 +676,7 @@ AddEventHandler("vehicule:sendFuel", function(bool, ess)
 	if(bool == 1) then
 		essence = ess
 	else
-		essence = (math.random(1,100)/100)*0.142
+		essence = (math.random(15,100)/100)*0.142
 		--table.insert(vehiclesUsed, {plate = GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1))), model = GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1)))), es = essence})
 		vehicle = GetVehiclePedIsUsing(GetPlayerPed(-1))
 		TriggerServerEvent("essence:setToAllPlayerEscense", essence, GetVehicleNumberPlateText(GetVehiclePedIsUsing(GetPlayerPed(-1))), GetDisplayNameFromVehicleModel(GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1)))))

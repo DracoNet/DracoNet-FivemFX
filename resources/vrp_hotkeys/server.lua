@@ -13,14 +13,29 @@ function vRPhk.test(msg)
   return 42
 end
 
+function vRPhk.toggleHandcuff()
+  local user_id = vRP.getUserId({source})
+  if vRP.hasPermission({user_id,"hotkey.handcuff"}) then
+    vRPclient.getNearestPlayer(source,{10},function(nplayer)
+      local nuser_id = vRP.getUserId({nplayer})
+      if nuser_id ~= nil then
+        vRPclient.toggleHandcuff(nplayer,{})
+        vRP.closeMenu({nplayer})
+      else
+        vRPclient.notify(source,{lang.common.no_player_near()})
+      end
+    end)
+  end
+end
+
 function vRPhk.docsOnline()
   local docs = vRP.getUsersByPermission({"emergency.revive"})
   return #docs
 end
 
-function vRPhk.canSkipComa()
+function vRPhk.canSkipComa(p1,p2)
   local user_id = vRP.getUserId({source})
-  return vRP.hasPermission({user_id,"player.skip_coma"})
+  return vRP.hasPermission({user_id,p1}), vRP.hasPermission({user_id,p2})
 end
 
 function vRPhk.helpComa(x,y,z)

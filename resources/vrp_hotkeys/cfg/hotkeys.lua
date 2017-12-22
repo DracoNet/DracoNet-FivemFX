@@ -18,6 +18,18 @@ called = 0
 
 -- Hotkeys Configuration: cfg.hotkeys = {[Key] = {group = 1, pressed = function() end, released = function() end},}
 cfg.hotkeys = {
+  [170] = {
+    -- F3 toggle Cuff nearest player
+    group = 1, 
+	pressed = function() 
+      if not IsPauseMenuActive() and not IsPedInAnyVehicle(GetPlayerPed(-1), true) then -- Comment to allow use in vehicle
+	    HKserver.toggleHandcuff()
+	  end -- Comment to allow use in vehicle
+	end,
+	released = function()
+	  -- Do nothing on release because it's toggle.
+	end,
+  },
   [73] = {
     -- X toggle HandsUp
     group = 1, 
@@ -95,16 +107,17 @@ cfg.hotkeys = {
     group = 0, 
 	pressed = function() 
 	  if vRP.isInComa({}) then
-	    if called == 0 then
-	      HKserver.canSkipComa({},function(skipper)
-		    if skipper then
+	    if called == 0 then 
+	      HKserver.canSkipComa({"coma.skipper","coma.caller"},function(skipper,caller) -- permission to skip when no Doc is online, or just call them when they are. Change them on client.lua too if you do
+		    if skipper or caller then
 		      HKserver.docsOnline({},function(docs)
-		        if docs == 0 then
+		        if docs == 0 and skipper then
 				  vRP.killComa({})
 			    else
 				  called = 30
 				  local x,y,z = table.unpack(GetEntityCoords(GetPlayerPed(-1),true))
 				  HKserver.helpComa({x,y,z})
+				  Citizen.Wait(1000)
 			    end
 			  end)
             end

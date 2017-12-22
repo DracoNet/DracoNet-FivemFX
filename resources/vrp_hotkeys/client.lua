@@ -117,12 +117,12 @@ Citizen.CreateThread(function() -- coma thread
     Citizen.Wait(1000)
     if vRP.isInComa({}) then
 	  if called == 0  then
-	    HKserver.canSkipComa({},function(skipper)
-	      if skipper then
+	    HKserver.canSkipComa({"coma.skipper","coma.caller"},function(skipper, caller) -- change them on cfg too if you do
+	      if skipper or caller then
 		    HKserver.docsOnline({},function(docs)
-		      if docs == 0 then
+		      if docs == 0 and skipper then
 			    vRP.notify({"~r~There's nobody to revive you.\n~b~Press ~g~E~b~ to respawn."})
-			  else
+			  elseif docs > 0 and caller then
 			    vRP.notify({"~g~There are doctors online.\n~b~Press ~g~E~b~ to call an ambulance."})
 			  end
 		    end)

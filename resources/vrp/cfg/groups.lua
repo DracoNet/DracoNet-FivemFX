@@ -62,9 +62,9 @@ cfg.groups = {
 	"player.group.add",
     "player.group.remove",
   },
-  ["god"] = {
-    "admin.god" -- reset survivals/health periodically
-  },
+--  ["god"] = {
+--    "admin.god" -- reset survivals/health periodically
+--  },
   ["mod"] = {
     _config = {onspawn = function(player) vRPclient.notify(player,{"You are mod."}) end}, 
 	"admin.tickets",
@@ -95,7 +95,7 @@ cfg.groups = {
     "police.seizable",	-- can be seized
 	"toggle.service",
 	"carjacker.lockpick",
-	"player.userlist",
+	--"player.userlist",
 	"user.paycheck"
   },
   ["Fisher"] = {
@@ -135,6 +135,7 @@ cfg.groups = {
     "police.putinveh",
     "police.getoutveh",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -159,7 +160,8 @@ cfg.groups = {
 	"emergency.market",
 	"emergency.revive",
 	"emergency.shop",
-	"player.list",
+	--"player.list",
+	"holdup.police",
 	"police.paycheck"
   },
   ["Police Detective"] = {  
@@ -182,6 +184,7 @@ cfg.groups = {
     --"police.jail",
     --"police.fine",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -200,7 +203,8 @@ cfg.groups = {
 	"emergency.market",
 	"emergency.revive",
 	"emergency.shop",
-	"player.list",
+	--"player.list",
+	"holdup.police",
 	"Detective.paycheck"
   },
   ["EMS"] = {
@@ -307,6 +311,7 @@ cfg.groups = {
     "police.service",
     "police.seize.weapons",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -322,6 +327,7 @@ cfg.groups = {
 	"Cadet.vehicle",
 	"police.loadshop",
 	"cop.whitelisted",
+	"holdup.police",
 	"Cadet.paycheck"
   },
   ["SWAT"] = {
@@ -341,6 +347,7 @@ cfg.groups = {
     "police.seize.items",
     --"police.jail",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -359,6 +366,7 @@ cfg.groups = {
 	"emergency.revive",
 	"emergency.shop",
 	"cop.whitelisted",
+	"holdup.police",
 	"SWAT.paycheck"
   },
   ["Chief of Police"] = {
@@ -374,6 +382,7 @@ cfg.groups = {
     "police.getoutveh",
     "police.service",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -397,6 +406,7 @@ cfg.groups = {
 	"emergency.revive",
 	"emergency.shop",
 	"cop.whitelisted",
+	"holdup.police",
 	"Chief.paycheck"
   },
   ["Bounty Hunter"] = {
@@ -410,6 +420,7 @@ cfg.groups = {
     "police.putinveh",
     "police.getoutveh",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -441,6 +452,7 @@ cfg.groups = {
     "police.getoutveh",
     "police.service",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -464,6 +476,7 @@ cfg.groups = {
 	"emergency.revive",
 	"emergency.shop",
 	"cop.whitelisted",
+	"holdup.police",
 	"sheriff.paycheck"
   },
   ["State Trooper"] = {
@@ -481,6 +494,7 @@ cfg.groups = {
     "police.wanted",
     "police.seize.weapons",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -502,6 +516,7 @@ cfg.groups = {
 	"emergency.revive",
 	"emergency.shop",
 	"cop.whitelisted",
+	"holdup.police",
 	"Commander.paycheck"
   },
     ["Deputy Sheriff"] = {
@@ -518,6 +533,7 @@ cfg.groups = {
     "police.service",
     "police.wanted",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -540,6 +556,7 @@ cfg.groups = {
 	"emergency.revive",
 	"emergency.shop",
 	"cop.whitelisted",
+	"holdup.police",
 	"Deputy.paycheck"
   },
     ["Police Captain"] = {
@@ -555,6 +572,7 @@ cfg.groups = {
     "police.getoutveh",
     "police.service",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -578,6 +596,7 @@ cfg.groups = {
 	"emergency.revive",
 	"emergency.shop",
 	"cop.whitelisted",
+	"holdup.police",
 	"Captain.paycheck"
   },
     ["Police Lieutenant"] = {
@@ -593,6 +612,7 @@ cfg.groups = {
     "police.getoutveh",
     "police.service",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -616,6 +636,7 @@ cfg.groups = {
 	"emergency.revive",
 	"emergency.shop",
 	"cop.whitelisted",
+	"holdup.police",
 	"Lieutenant.paycheck"
   },
     ["Police Detective"] = {
@@ -631,6 +652,7 @@ cfg.groups = {
     "police.getoutveh",
     "police.service",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -654,6 +676,7 @@ cfg.groups = {
 	"emergency.revive",
 	"emergency.shop",
 	"cop.whitelisted",
+	"holdup.police",
 	"Detective.paycheck"
   },
     ["Police Sergeant"] = {
@@ -670,6 +693,7 @@ cfg.groups = {
     "police.service",
     "police.wanted",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -692,6 +716,7 @@ cfg.groups = {
 	"emergency.revive",
 	"emergency.shop",
 	"cop.whitelisted",
+	"holdup.police",
 	"Sergeant.paycheck"
   },
     ["Dispatcher"] = {
@@ -704,6 +729,7 @@ cfg.groups = {
     "police.check",
     "police.service",
 	"police.drag",
+	"hotkey.handcuff",
 	"police.easy_cuff",
 	"police.easy_fine",
 	"police.easy_jail",
@@ -721,6 +747,7 @@ cfg.groups = {
 	"emergency.revive",
 	"emergency.shop",
 	"cop.whitelisted",
+	"holdup.police",
 	"Dispatch.paycheck"
   },
 
@@ -759,6 +786,9 @@ cfg.groups = {
   ["cop"] = {
     "cop.whitelisted"
   },
+  ["ems"] = {  
+    "ems.whitelisted"
+  },
   ["Exotic Car Dealer"] = {
    	_config = { gtype = "job",
 	  onspawn = function(player) vRPclient.notify(player,{"You are an Exotic Car Dealer"}) end
@@ -771,9 +801,6 @@ cfg.groups = {
   },
   ["buyer"] = {  
     "exotic.vehicle"
-  },
-  ["ems"] = {  
-    "ems.whitelisted"
   },
   ["moderator"] = {
     "president.whitelisted"
