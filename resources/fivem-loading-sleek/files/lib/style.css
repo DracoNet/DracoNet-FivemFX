@@ -84,3 +84,111 @@ body{
     top:15px;
     font-family: 'Lato', sans-serif;
 }
+
+#mainframe {
+  border-radius: 3px;
+  width: 65em;
+  min-width: 52em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-perspective: 500px;
+  -ms-perspective: 500px;
+  perspective: 500px;
+  z-index: 2;
+}
+#container {
+  width: auto;
+  padding: 1em 1em 2em 1em;
+  height: 30em;
+}
+.block {
+  width: 48%;
+  display: inline-block;
+  border-radius: 3px;
+  float: left;
+  padding: 0.2em;
+  -webkit-transform: rotateY(10deg);
+  transform: rotateY(10deg);
+  -ms-transform: rotateY(10deg);
+  -webkit-transition: transform 1s;
+}
+.block:nth-child(2) {
+  float: right;
+  -webkit-transform: rotateY(-10deg);
+  -moz-transform: rotateY(-10deg);
+  -ms-transform: rotateY(-10deg);
+  transform: rotateY(-10deg);
+}
+.block:hover {
+  -webkit-transition: transform 1s;
+  behavior:url(-ms-transform.htc); 
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: white;
+  position: relative;
+  background-color: rgba(25, 25, 25, 0.50);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  margin: 0 0 0.3em 0;
+  padding: 1em;
+  border-radius: 3px;
+}
+.infohold {
+  display: none;
+  background-color: rgba(25, 25, 25, 0.50);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  border-radius: 3px;
+  padding: 2em 0 2em 0;
+}
+.wbg {
+  height: 11em;
+  width: 11em;
+  margin: 0 auto 0 auto;
+  padding: 1px;
+  box-shadow: 0 0 1px white;
+  background-color: white;
+  border-radius: 190px;
+}
+.propic {
+  background-image: url("https://file.dracomail.net/Logo/ny%20logo.png");
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  border-radius: 190px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.name {
+  color: white;
+  text-shadow: 0 0 2px white;
+  font-size: 36px;
+  text-align: center;
+  font-family: Pricedown;
+  margin: 0.5em 0 0.5em 0;
+}
+.steamid {
+  display: none;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-shadow: 0 0 1px silver;
+  font-size: 26px;
+  text-align: center;
+  font-weight: 300;
+  margin: 0.2em auto 0 auto;
+  padding: 0.3em;
+  width: 90%;
+  border-radius: 3px;
+  bottom: 0;
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.40);
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.40);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.40);
+  -o-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.40);
+}

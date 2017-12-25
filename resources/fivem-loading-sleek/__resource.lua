@@ -5,6 +5,7 @@
 files {
     'files/index.html',
     'files/config.js',
+	'files/index.js',
     'files/infos.txt',
 	'files/sound.ogg',
     'files/img/bg1.jpg',
