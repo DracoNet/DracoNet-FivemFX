@@ -29,21 +29,33 @@ cfg.market_types = {
     ["kebab"] = 200,
     ["pdonut"] = 650,
   },
-  --["drugstore"] = {
-  --  _config = {blipid=51, blipcolor=2},
-  --  ["pills"] = 500
-  --},
+
+  ["police"] = {
+    -- list itemid => price
+    -- Drinks
+    ["water"] = 20,
+    ["coffee"] = 40,
+    ["tea"] = 40,
+    ["gocagola"] = 120,
+
+    --Food
+    ["donut"] = 20,
+    ["sandwich"] = 200,
+  },
+  
   ["emergencyloadout"] = {
     _config = {blipid=51, blipcolor=68, permissions={"emergency.market"}},
     ["medkit"] = 0,
     ["pills"] = 0
   },
+  
   ["plantation"] = {
     _config = {blipid=473, blipcolor=4, permissions={"drugseller.market"}},
     ["seeds"] = 500,
 	["benzoilmetilecgonina"] = 800,
 	["harness"] = 1000
   },
+  
   ["tools"] = {
     _config = {blipid=402, blipcolor=47, permissions={"repair.market"}},
     ["repairkit"] = 50
@@ -74,12 +86,12 @@ cfg.markets = {
   {"food",-1486.76574707031,-379.553985595703,40.163387298584}, 
   {"food",-1223.18127441406,-907.385681152344,12.3263463973999}, 
   {"food",-707.408996582031,-913.681701660156,19.2155857086182},
-  --{"drugstore",356.5361328125,-593.474304199219,28.7820014953613},
   {"emergencyloadout",242.42835998535,-1382.1253662109,39.534385681152}, -- spawn
   {"emergencyloadout",1841.4317626953,3673.5891113281,34.276752471924}, -- Sandy Shores
   {"emergencyloadout",-243.3074798584,6326.2265625,32.426181793213}, -- Paleto Bay
   {"plantation",1789.86682128906,3896.16943359375,34.3892250061035},
-  {"tools",408.95471191406,-1622.8607177734,29.291942596436}
+  {"tools",408.95471191406,-1622.8607177734,29.291942596436},
+  {"police",436.70712280273,-986.0849609375,30.689603805542}
 }
 
 return cfg
