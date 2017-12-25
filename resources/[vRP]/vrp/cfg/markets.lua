@@ -31,9 +31,7 @@ cfg.market_types = {
   },
 
   ["vending"] = {
-    _config = {}
-    -- list itemid => price
-    -- Drinks
+    _config = {},
     ["water"] = 20,
     ["coffee"] = 40,
     ["tea"] = 40,
