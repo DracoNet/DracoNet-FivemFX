@@ -27,10 +27,11 @@ cfg.market_types = {
     ["tacos"] = 80,
     ["sandwich"] = 200,
     ["kebab"] = 200,
-    ["pdonut"] = 650,
+    ["pdonut"] = 650
   },
 
-  ["police"] = {
+  ["vending"] = {
+    _config = {}
     -- list itemid => price
     -- Drinks
     ["water"] = 20,
@@ -40,7 +41,7 @@ cfg.market_types = {
 
     --Food
     ["donut"] = 20,
-    ["sandwich"] = 200,
+    ["sandwich"] = 200
   },
   
   ["emergencyloadout"] = {
@@ -91,7 +92,7 @@ cfg.markets = {
   {"emergencyloadout",-243.3074798584,6326.2265625,32.426181793213}, -- Paleto Bay
   {"plantation",1789.86682128906,3896.16943359375,34.3892250061035},
   {"tools",408.95471191406,-1622.8607177734,29.291942596436},
-  {"police",436.70712280273,-986.0849609375,30.689603805542}
+  {"vending",436.70712280273,-986.0849609375,30.689603805542}
 }
 
 return cfg
