@@ -23,5 +23,10 @@ Current: V6.2.2
 8) start server let it make the database then load SQL.sql in database
 
 
+You can donate if you like: 
+paypal.me/Draco8
+
+---
+
 Thanks to Dunko for Fremwork
 https://github.com/DunkoUK
