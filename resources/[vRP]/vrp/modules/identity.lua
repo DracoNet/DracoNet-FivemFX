@@ -28,6 +28,7 @@ MySQL.createCommand("vRP/init_user_identity","INSERT IGNORE INTO vrp_user_identi
 MySQL.createCommand("vRP/update_user_identity","UPDATE vrp_user_identities SET firstname = @firstname, name = @name, age = @age, registration = @registration, phone = @phone WHERE user_id = @user_id")
 MySQL.createCommand("vRP/get_userbyreg","SELECT user_id FROM vrp_user_identities WHERE registration = @registration")
 MySQL.createCommand("vRP/get_userbyphone","SELECT user_id FROM vrp_user_identities WHERE phone = @phone")
+MySQL.createCommand("vRP/get_userlicensescheck","SELECT id,DmvTest FROM vrp_users WHERE id = @user_id")
 
 -- init
 MySQL.execute("vRP/identity_tables")
@@ -39,6 +40,14 @@ function vRP.getUserIdentity(user_id, cbr)
   local task = Task(cbr)
 
   MySQL.query("vRP/get_user_identity", {user_id = user_id}, function(rows, affected)
+    task({rows[1]})
+  end)
+end
+
+function vRP.getUserLicenses(user_id, cbr)
+  local task = Task(cbr)
+
+  MySQL.query("vRP/get_userlicensescheck", {user_id = user_id}, function(rows, affected)
     task({rows[1]})
   end)
 end
@@ -241,26 +250,106 @@ vRP.registerMenuBuilder("main", function(add, data)
 
   local user_id = vRP.getUserId(player)
   if user_id ~= nil then
+    local choices = {}
+    choices[lang.cityhall.menu.title()] = {function(player,choice)
+      -- display aptitudes
+        if player_identitys[player] then -- hide
+          player_identitys[player] = nil
+          vRPclient.removeDiv(player,{"user_identitys"})
+        else -- show
+          local content = ""
+          vRP.getUserIdentity(user_id, function(identity)
+            if identity then
+              -- generate identity content
+              -- get address
+              vRP.getUserAddress(user_id, function(address)
+                local home = "Homeless"
+                local number = ""
+                if address then
+                  home = address.home
+                  number = address.number
+                end
+                vRP.getUserLicenses(user_id, function(license)
+                  local dmvlicense = "Error"
+                  if license then
+                    if license.DmvTest == 'Required' then 
+                      dmvlicense = 'None'
+                    elseif license.DmvTest == 'Passed' then
+                      dmvlicense = 'OK'
+                    end
+                  end
+                  local bankMoney = vRP.commaformat(vRP.getBankMoney(user_id))
+                  content = "Identitet<br /><div class=\"dprogressbar\" data-color=\"rgba(49,51,61,0.7)\" data-bgcolor=\"rgba(49,51,61,0.3)\">First name: "..htmlEntities.encode(identity.firstname).."</div><div class=\"dprogressbar\" data-color=\"rgba(49,51,61,0.7)\" data-bgcolor=\"rgba(49,51,61,0.3)\">Surname: "..htmlEntities.encode(identity.name).."</div><div class=\"dprogressbar\" data-color=\"rgba(49,51,61,0.7)\" data-bgcolor=\"rgba(49,51,61,0.3)\">Age: "..identity.age.."</div><div class=\"dprogressbar\" data-color=\"rgba(49,51,61,0.7)\" data-bgcolor=\"rgba(49,51,61,0.3)\">Registration n°: "..identity.registration.."</div><div class=\"dprogressbar\" data-color=\"rgba(49,51,61,0.7)\" data-bgcolor=\"rgba(49,51,61,0.3)\">Mobile Number: "..identity.phone.."</div><div class=\"dprogressbar\" data-color=\"rgba(49,51,61,0.7)\" data-bgcolor=\"rgba(49,51,61,0.3)\">Address: "..home.." "..number.."</div><div class=\"dprogressbar\" data-color=\"rgba(49,51,61,0.7)\" data-bgcolor=\"rgba(49,51,61,0.3)\">Driver license: "..dmvlicense.."</div><div class=\"dprogressbar\" data-color=\"rgba(49,51,61,0.7)\" data-bgcolor=\"rgba(49,51,61,0.3)\">Money in Bank: "..bankMoney.." DKK</div>"
+                  local css = [[
+.div_user_identitys{
+  margin: auto;
+  padding: 8px;
+  width: 500px;
+  margin-top: 80px;
+  background: #3C3E48;
+  color: #E74C3C;
+  font-weight: bold;
+}
+
+.div_user_identitys .dprogressbar{
+  width: 100%;
+  height: 20px;
+}
+                  ]]
+                  vRPclient.setDiv(player,{"user_identitys",css, content})
+                end)
+              end)
+            end
+          end)
+
+          player_identitys[player] = true
+          
+        end
+      end,'Se din identitet'}
+
+    add(choices)
+  end
+end)
+
+
+--[[
+-- add identity to main menu (old stile)
+vRP.registerMenuBuilder("main", function(add, data)
+  local player = data.player
+
+  local user_id = vRP.getUserId(player)
+  if user_id ~= nil then
     vRP.getUserIdentity(user_id, function(identity)
 
       if identity then
         -- generate identity content
         -- get address
         vRP.getUserAddress(user_id, function(address)
-          local home = ""
+          local home = "Homeless"
           local number = ""
           if address then
             home = address.home
             number = address.number
           end
+          vRP.getUserLicenses(user_id, function(license)
+            local dmvlicense = "Error"
+            if license then
+              if license.DmvTest == 'Required' then 
+                dmvlicense = 'None'
+              else
+                dmvlicense = 'OK'
+              end
+            end
+            local bankMoney = vRP.commaformat(vRP.getBankMoney(user_id))
+            local content = lang.cityhall.menu.info({htmlEntities.encode(identity.name),htmlEntities.encode(identity.firstname),identity.age,identity.registration,identity.phone,home,number,dmvlicense,bankMoney})
+            local choices = {}
+            choices[lang.cityhall.menu.title()] = {function()end, content}
 
-          local content = lang.cityhall.menu.info({htmlEntities.encode(identity.name),htmlEntities.encode(identity.firstname),identity.age,identity.registration,identity.phone,home,number})
-          local choices = {}
-          choices[lang.cityhall.menu.title()] = {function()end, content}
-
-          add(choices)
+            add(choices)
+          end)
         end)
       end
     end)
   end
 end)
+]]

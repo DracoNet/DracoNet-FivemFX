@@ -153,6 +153,11 @@ function vRP.tryFullPayment(user_id,amount)
   return false
 end
 
+function vRP.commaformat(myNumber)
+  local left,num,right = string.match(myNumber,'^([^%d]*%d)(%d*)(.-)$')
+  return left..(num:reverse():gsub('(%d%d%d)','%1.'):reverse())..right
+end
+
 -- events, init user account if doesn't exist at connection
 AddEventHandler("vRP:playerJoin",function(user_id,source,name,last_login)
   MySQL.execute("vRP/money_init_user", {user_id = user_id, wallet = cfg.open_wallet, bank = cfg.open_bank}, function(affected)
